@@ -11,8 +11,9 @@ int main()
 int invers(int a)
 {
 	int b=0;
-	while (a!=0){
-		b+=(a%10);
+	while (a!=0)
+	{
+		b+=a%10;
 		b*=10;
 		a/=10;
 	{
