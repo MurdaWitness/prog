@@ -4,13 +4,14 @@
 #define SIZE 10
 int main ()
 {
-	int A[SIZE] = {0};
+	int A[SIZE];
+    int i;
+
 	srand(time(NULL));
-	int i;
-	for (i = 1; i <= SIZE; i++)
+	for (i = 0; i < SIZE; i++)
 	{
-		A[i-1] = rand () %1000; 
-		printf("%d: ", A[i-1]);
+		A[i] = rand()%99 + 1; 
+		printf("%d ", A[i]);
 	}
 
 printf("\n");
