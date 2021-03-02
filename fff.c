@@ -9,9 +9,10 @@ int main ()
 	int i;
 	for (i = 1; i <= SIZE; i++)
 	{
-		A[i-1] = rand () %1000; printf("%d: ", A[i-1])
+		A[i-1] = rand () %1000; 
+		printf("%d: ", A[i-1]);
 	}
-}
+
 printf("\n");
 
 	return 0;
