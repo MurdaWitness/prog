@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "f.c"
+#include "5_1.1.c"
 int main()
 {
 	float n;
