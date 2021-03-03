@@ -22,17 +22,17 @@ int main()
 
 void fill(int X[], int n)
 {
-srand(time(NULL));
-for (int i=0; i<n; i++)
+	srand(time(NULL));
+	for (int i=0; i<n; i++)
 	X[i] = rand()%99 + 1;
 }
 
 
 void show(int X[], int n)
 {
-for (int i=0; i<n; i++)
+	for (int i=0; i<n; i++)
 	printf("%d\t", X[i]);
-printf("\n");
+	printf("\n");
 }
 
 
