@@ -31,7 +31,7 @@ void fill(int X[], int n)
 void show(int X[], int n)
 {
 	for (int i=0; i<n; i++)
-	printf("%d\t", X[i]);
+	printf("%-2d\t", X[i]);
 	printf("\n");
 }
 
