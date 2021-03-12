@@ -61,6 +61,4 @@ void show_2d(int B[][NUM], int N)
         }
         printf("\n");
     }
-
-
 }
