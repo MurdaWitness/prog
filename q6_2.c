@@ -30,15 +30,14 @@ void fill(float A[], int N)
 void show(float A[], int N)
 {
 	for (int i=0; i<N; i++)
-	printf("%-5.2f\t", A[i]);
+	printf("%-6.2f\t", A[i]);
 	printf("\n");
 }
 
 
 void minus(float A[], int N)
 {
-    float sr;
-    int sum = 0;
+    float sr, sum = 0;
     for (int i = 1; i < N; i++)
     {
         for (int k = 0; k < i; k++)
@@ -46,6 +45,8 @@ void minus(float A[], int N)
             sum+=A[k];
         }
         sr = sum/i;
+        sum = 0;
         A[i] -= sr;
     }
+    
 }
