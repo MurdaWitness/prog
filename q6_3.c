@@ -9,7 +9,7 @@ int main()
 {
     int A[SIZE1][SIZE2];
     chess(A, SIZE1, SIZE2);
-    show_2d(A, SIZE1, SIZE2);    
+    show_2d(A, SIZE1, SIZE2);
 }
 
 
@@ -17,17 +17,17 @@ void chess(int A[][SIZE2], int S1, int S2)
 {
 for(int i = 0; i<S1; i+=2)
     {
-        for(int j = 0; j<S2; j+=2) 
+        for(int j = 0; j<S2; j+=2)
         A[i][j] = 1;
-        for(int j = 1; j<S2; j+=2) 
+        for(int j = 1; j<S2; j+=2)
         A[i][j] = 0;
     }
 
 for(int i = 1; i<S1; i+=2)
     {
-        for(int j = 0; j<S2; j+=2) 
+        for(int j = 0; j<S2; j+=2)
         A[i][j] = 0;
-        for(int j = 1; j<S2; j+=2) 
+        for(int j = 1; j<S2; j+=2)
         A[i][j] = 1;
     }
 }
