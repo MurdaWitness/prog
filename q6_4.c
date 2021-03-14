@@ -5,7 +5,7 @@
 
 void fill_2d(int[][SIZE], int);
 void show_2d(int[][SIZE], int);
-void diag(int[][SIZE], int);
+void summa(int[][SIZE], int);
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
     fill_2d(A, SIZE);
     show_2d(A, SIZE);
     printf("\n");
-    diag(A, SIZE);
+    summa(A, SIZE);
     return 0;
 }
 
@@ -42,7 +42,7 @@ void show_2d(int A[][SIZE], int S)
 }
 
 
-void diag(int A[][SIZE], int S)
+void summa(int A[][SIZE], int S)
 {
     int sum = 0;
     int itmp;
