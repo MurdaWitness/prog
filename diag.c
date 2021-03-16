@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 #include <time.h>
-#define SIZE 5
+#define SIZE 4
 
 void fill_2d(int[][SIZE], int);
 void show_2d(int[][SIZE], int);
