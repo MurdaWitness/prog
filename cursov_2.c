@@ -65,11 +65,12 @@ float method_2()
     srand(time(NULL));
     x0 =  rand()%1000;
     float (*d_arr[3])(float, float, float) = {derivative_2, derivative_4, derivative_5};
-    //derivative_2(x0);
     float (*currentDerivative)(float, float, float);
     int d_choice;
     scanf("%d", d_choice);
     currentDerivative = d_arr[d_choice-1];
+    currentDerivative(x0);
+    //производная -ю уравнение прямой(угол наклона и точка) -ю где прямая пересекает 0 -ю прямая пересекает ноль - новый икс 
 
     return;
 }
