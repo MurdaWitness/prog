@@ -69,7 +69,7 @@ float method_2()
     int d_choice;
     scanf("%d", d_choice);
     currentDerivative = d_arr[d_choice-1];
-    currentDerivative(x0);
+    currentDerivative(x0, c, d);
     //производная -ю уравнение прямой(угол наклона и точка) -ю где прямая пересекает 0 -ю прямая пересекает ноль - новый икс 
 
     return;

@@ -8,37 +8,45 @@ void main()
 {
     float x, e;
     int steps;
+    float tangens;
+    /*for (int i = 0; i <= 360; i+=15)
+    {
+        x = i;
+        x *= M_PI / 180;
+        printf("%f\n", tan(x));
+    }*/
     do
     {
-        printf("Введите точность e (e>0): ");
+        printf("Введите точность e больше или равна 0.000001: ");
         scanf("%f", &e);
-        if(e<=0) printf("ERR0R!!!\n");
+        if(e < (float)0.000001) printf("Ошибка! Точность e должна быть больше или равна 0.000001.\n");
     }
-    while(e<=0);
-    do
-    {
-        printf("Введите x в градусах: ");
-        scanf("%f", &x);
-        if(x<0) printf("ERR0R!!!\n");
-    }
-    while(x<0);
+    while(e < (float)0.000001);
+    
+    printf("Введите x в градусах: ");
+    scanf("%f", &x);
+    if(x<0) while(x<0) x+=360;
+    // проверка на 90 градусов + вырубание программы после 1000 шагов
+    
     x *= M_PI / 180;
     steps = control(x, e);
+    tangens = inf(x, steps);
+
     printf("Количество шагов равно: %d\n", steps);
-    printf("Бесконечная сумма равна: %f\n", inf(x, steps));
+    printf("Бесконечная сумма равна: %f\n", tangens);
 }
 
 int control(float x, float e)
 {
-    int step = 1;
-    float res;
+    int step = 0;
+    float result;
     do
     {
-        res = inf(x, step);
         step++;
+        result = inf(x, step);
     }
-    while (fabs(res-tan(x))>e);
-    return step-1;
+    while (fabs(result - tan(x)) > e);
+    return step;
 }
 
 float inf(float argument, int step)
