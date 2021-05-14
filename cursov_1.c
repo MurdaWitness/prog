@@ -9,12 +9,16 @@ void main()
     float x, e;
     int steps;
     float tangens;
-    /*for (int i = 0; i <= 360; i+=15)
+    do
     {
-        x = i;
-        x *= M_PI / 180;
-        printf("%f\n", tan(x));
-    }*/
+        printf("Введите x в градусах: ");
+        scanf("%f", &x);
+		if(fabs(fmodf(x, 180)) == (float)90) printf("Ошибка! Тангенса от 90 градусов не существует.\n");
+		else if((fabs(fmodf(x, 180)) > (float)85) && (fabs(fmodf(x, 180)) < (float)95))	printf("Внимание! При исследовании тангенса градусов, близких к 90 не выставляйте точность ниже 0.001.\n");
+        
+    }
+    while (fabs(fmodf(x, 180)) == (float)90);
+    
     do
     {
         printf("Введите точность e больше или равна 0.000001: ");
@@ -22,11 +26,6 @@ void main()
         if(e < (float)0.000001) printf("Ошибка! Точность e должна быть больше или равна 0.000001.\n");
     }
     while(e < (float)0.000001);
-    
-    printf("Введите x в градусах: ");
-    scanf("%f", &x);
-    if(x<0) while(x<0) x+=360;
-    // проверка на 90 градусов + вырубание программы после 1000 шагов
     
     x *= M_PI / 180;
     steps = control(x, e);
@@ -42,7 +41,12 @@ int control(float x, float e)
     float result;
     do
     {
-        step++;
+        if (step < 100) step++;
+        else 
+        {
+            printf("Ошибка! Количество итераций превысило допустимый порог!\nВыставляется произвольное количество шагов.\n");
+            return 1;
+        }
         result = inf(x, step);
     }
     while (fabs(result - tan(x)) > e);
@@ -51,8 +55,11 @@ int control(float x, float e)
 
 float inf(float argument, int step)
 {
-    int currentOdd = (step - 1) * 2 - 1;
+    int currentOdd;
     float minus = 0, denominator;
+    
+    if (step == 1) currentOdd = step;
+    else currentOdd = (step - 1) * 2 - 1;
     while(currentOdd >= 1)
     {
         denominator = currentOdd/argument - minus;
