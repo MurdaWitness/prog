@@ -10,7 +10,7 @@ struct client
 
 void show(FILE *f)
 {
-
+    if (())
 }
 
 int main()
