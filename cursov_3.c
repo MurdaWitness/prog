@@ -8,6 +8,8 @@ struct entry
     int date;
     int month;
     int year;
+    int hour;
+    int minute;
     char note[255];
 };
 
