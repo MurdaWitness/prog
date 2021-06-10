@@ -57,7 +57,7 @@ void main()
     printf("2: y = x^3 + cx^2 + d\n");
     printf("3: y = x^4 + cx^3 - dx\n");
     printf("4: y = cx^3 + dx^2 - cx\n");
-    printf("5: y = cx^8 - dx^5\n");
+    printf("5: y = cx^8 - dx^5 + c\n");
     printf("6: y = cx^8 - dx^4 + x\n");
     //Получение номера уравнения от пользователя 
     do
@@ -154,12 +154,12 @@ float method_1(int f_choice, float c, float d, float e, int *count)
 		//Увеличивает счётчик на единицу
 		(*count)++;
         //Сообщение об ошибке при выходе за границы допустимого количества итераций
-        if((*count)>=500) 
+        if((*count) >= 1000) 
         printf("\nОшибка! Превышено допустимое количество итераций!\n");
     } 
 	/*Цикл с постусловием, сравнивает разницу левой и правой границами отрезка,
     а также проверяет выход за границы допустимого количества итераций*/
-	while ((fabs(b-a)>e) && (*count < 500));
+	while ((fabs(b-a)>e) && (*count < 1000));
 
     return mid;
 }
@@ -195,12 +195,12 @@ float method_2(int f_choice, float c, float d, float e, int *count)
         //Увеличивает счётчик итераций на единицу
 		(*count)++;
         //Сообщение об ошибке при выходе за границы допустимого количества итераций
-        if((*count)>=500) 
+        if((*count) >= 1000) 
         printf("\nОшибка! Превышено допустимое количество итераций!\n");
     } 
     /*Цикл с постусловием, сравнивает разницу между старым и новым приближёнными значениями,
     а также проверяет выход за границы допустимого количества итераций*/
-    while ((fabs(x - x0) > e) && (*count < 500));
+    while ((fabs(x - x0) > e) && (*count < 1000));
 
     return x;
 }
@@ -247,7 +247,7 @@ float equation_4(float x, float c, float d)
 }
 float equation_5(float x, float c, float d)
 {
-    return c * pow(x, 8) - d * pow(x, 5);
+    return c * pow(x, 8) - d * pow(x, 5) + c;
 }
 float equation_6(float x, float c, float d)
 {
