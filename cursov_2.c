@@ -5,38 +5,37 @@
 //Подключаем стандартную библиотеку для использования команды clear 
 #include <stdlib.h>
 
-//Прототип метода деления отрезков пополам
-//Принимают номер уравнения, 2 параметра,
-//точность и указатель на счётчик
+/*Прототип метода деления отрезков пополам
+Принимает номер уравнения, 2 параметра,
+точность и указатель на счётчик*/
 float method_1(int, float, float, float, int *);
-//Прототип метода касательных
-//Принимают номер уравнения, 2 параметра,
-//точность и указатель на счётчик
+/*Прототип метода касательных
+Принимает номер уравнения, 2 параметра,
+точность и указатель на счётчик*/
 float method_2(int, float, float, float, int *);
-//Прототипы функций уравнений
-//Принимают аргумент и 2 параметра
+/*Прототипы функций уравнений
+Принимают аргумент и 2 параметра*/
 float equation_1(float, float, float);
 float equation_2(float, float, float);
 float equation_3(float, float, float);
 float equation_4(float, float, float);
 float equation_5(float, float, float);
 float equation_6(float, float, float);
-//Прототипы функций производных от уравнений
-//Принимают аргумент и 2 параметра
+/*Прототипы функций производных от уравнений
+Принимают аргумент и 2 параметра*/
 float derivative_1(float, float, float);
 float derivative_2(float, float, float);
 float derivative_3(float, float, float);
 float derivative_4(float, float, float);
 float derivative_5(float, float, float);
 float derivative_6(float, float, float);
+//Прототип функции, вычисляющей знак уравнения
+int sign(float);
 /*Статический двумерный массив функций уравнений и их 
 производных. Используется для удобного доступа из любого метода.
 1-ая мерность определяет, это уравнение первообразная или производная,
 2-ая - номер самого уравнения. Инициализируется самими уравнениями.*/
 float (*f[2][6])(float, float, float) = {{equation_1, equation_2, equation_3, equation_4, equation_5, equation_6}, {derivative_1, derivative_2, derivative_3, derivative_4, derivative_5, derivative_6}};
-//Прототип функции, вычисляющей знак уравнения
-int sign(float);
-
 
 //Главная функция main
 void main()
